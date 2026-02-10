@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تيك زون | سلة المشتريات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="phones.html">الجوالات</a></li>
+                    <li><a href="accessories.html">الاكسسوارات</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="cart.html" class="cart-icon" style="color: #ff9900;">🛒 السلة <span id="cart-badge"
+                                class="cart-badge">0</span></a></li>
+                </ul>
+            </nav>
+
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span> تيك زون</a>
+        </div>
+    </header>
+
+    <section class="container" style="min-height: 60vh;">
+        <h2 class="section-title">سلة المشتريات</h2>
+
+        <!-- رسالة السلة الفارغة -->
+        <div id="empty-cart" class="empty-cart" style="display: none;">
+            <div class="empty-cart-icon">🛒</div>
+            <h3>سلتك فارغة!</h3>
+            <p>لم تقم بإضافة أي منتجات بعد. تصفح متجرنا واختر ما يناسبك.</p>
+            <a href="phones.html" class="btn-buy"
+                style="display: inline-block; width: auto; padding: 14px 50px; border-radius: 30px; font-size: 1.1rem; margin-top: 15px;">
+                تسوق الآن 🛍️
+            </a>
+        </div>
+
+        <!-- محتوى السلة (يُملأ ديناميكياً) -->
+        <div id="cart-content" style="display: none;">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>المنتج</th>
+                        <th>اسم المنتج</th>
+                        <th>السعر</th>
+                        <th>الكمية</th>
+                        <th>الإجمالي</th>
+                        <th>حذف</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                </tbody>
+            </table>
+
+            <div class="cart-actions">
+                <button class="btn-clear-cart" onclick="clearCart()">🗑️ تفريغ السلة</button>
+                <a href="phones.html" class="btn-continue-shopping">متابعة التسوق 🛍️</a>
+            </div>
+
+            <div class="cart-summary">
+                <h3>ملخص الطلب</h3>
+
+                <div class="summary-item">
+                    <span>المجموع الفرعي:</span>
+                    <span id="subtotal">0 ر.س</span>
+                </div>
+
+                <div class="summary-item">
+                    <span>الضريبة (15%):</span>
+                    <span id="tax">0 ر.س</span>
+                </div>
+
+                <div class="summary-item">
+                    <span>الشحن:</span>
+                    <span style="color: #4ade80;">مجاني ✓</span>
+                </div>
+
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.1);">
+
+                <div class="summary-item total-price">
+                    <span>الإجمالي الكلي:</span>
+                    <span id="total">0 ر.س</span>
+                </div>
+
+                <button class="btn-checkout" onclick="checkout()">إتمام عملية الشراء 🔒</button>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>عن تيك زون</h3>
+                <p>وجهتك الأولى لأحدث التقنيات. نضمن لك أجهزة أصلية 100% مع ضمان الوكيل وتجربة تسوق آمنة وسريعة.</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h3>روابط هامة</h3>
+                <a href="privacy.html">سياسة الخصوصية</a>
+                <a href="terms.html">الشروط والأحكام</a>
+                <a href="contact.html">المساعدة والدعم</a>
+            </div>
+            <div class="footer-section">
+                <h3>طرق الدفع الآمنة</h3>
+                <div class="payment-icons">
+                    <span>VISA</span>
+                    <span>MasterCard</span>
+                    <span>Mada</span>
+                    <span>Apple Pay</span>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.8rem;">🔒 جميع العمليات مشفرة وآمنة</p>
+            </div>
+        </div>
+        <div class="copyright">
+            جميع الحقوق محفوظة &copy; 2026 لمتجر تيك زون
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        // --- عرض محتوى السلة (خاص بهذه الصفحة) ---
+        function renderCart() {
+            var cart = getCart();
+            var cartContent = document.getElementById('cart-content');
+            var emptyCart = document.getElementById('empty-cart');
+            var cartItems = document.getElementById('cart-items');
+
+            if (cart.length === 0) {
+                cartContent.style.display = 'none';
+                emptyCart.style.display = 'block';
+                return;
+            }
+
+            cartContent.style.display = 'block';
+            emptyCart.style.display = 'none';
+
+            var html = '';
+            var subtotal = 0;
+
+            for (var i = 0; i < cart.length; i++) {
+                var item = cart[i];
+                var itemTotal = item.price * item.qty;
+                subtotal += itemTotal;
+                html += '<tr>' +
+                    '<td><img src="' + item.image + '" alt="' + item.name + '"></td>' +
+                    '<td>' + item.name + '</td>' +
+                    '<td>' + item.price.toFixed(2) + ' ر.س</td>' +
+                    '<td class="qty-controls">' +
+                    '<button class="qty-btn" onclick="updateQuantity(' + i + ', -1)">−</button>' +
+                    '<span class="qty-value">' + item.qty + '</span>' +
+                    '<button class="qty-btn" onclick="updateQuantity(' + i + ', 1)">+</button>' +
+                    '</td>' +
+                    '<td>' + itemTotal.toFixed(2) + ' ر.س</td>' +
+                    '<td><button class="btn-remove" onclick="removeFromCart(' + i + ')">✕</button></td>' +
+                    '</tr>';
+            }
+
+            cartItems.innerHTML = html;
+
+            var tax = subtotal * 0.15;
+            var total = subtotal + tax;
+
+            document.getElementById('subtotal').textContent = subtotal.toFixed(2) + ' ر.س';
+            document.getElementById('tax').textContent = tax.toFixed(2) + ' ر.س';
+            document.getElementById('total').textContent = total.toFixed(2) + ' ر.س';
+        }
+
+        // --- إتمام الشراء ---
+        function checkout() {
+            var cart = getCart();
+            if (cart.length === 0) {
+                alert('سلتك فارغة!');
+                return;
+            }
+
+            var subtotal = 0;
+            for (var i = 0; i < cart.length; i++) {
+                subtotal += cart[i].price * cart[i].qty;
+            }
+            var totalWithTax = (subtotal * 1.15).toFixed(2);
+            var orderNum = 'TZ-' + Date.now().toString().slice(-6);
+            var itemCount = getCartCount();
+
+            alert('🎉 شكراً لك!\n\n' +
+                'تم استلام طلبك بنجاح.\n' +
+                'رقم الطلب: #' + orderNum + '\n' +
+                'عدد المنتجات: ' + itemCount + '\n' +
+                'المبلغ الإجمالي: ' + totalWithTax + ' ر.س\n\n' +
+                'سيتم التواصل معك قريباً لتأكيد الطلب والشحن. 🚚');
+
+            localStorage.removeItem('techzone_cart');
+            updateCartBadge();
+            renderCart();
+        }
+
+        // تهيئة السلة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+</body>
+
+</html>

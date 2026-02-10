@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="تواصل مع فريق دعم تيك زون. نحن هنا لمساعدتك في استفساراتك حول الجوالات والاكسسوارات.">
+    <title>تيك زون | اتصل بنا</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="phones.html">الجوالات</a></li>
+                    <li><a href="accessories.html">الاكسسوارات</a></li>
+                    <li><a href="contact.html" style="color: #ff9900;">اتصل بنا</a></li>
+                    <li><a href="cart.html" class="cart-icon">🛒 السلة <span id="cart-badge"
+                                class="cart-badge">0</span></a></li>
+                </ul>
+            </nav>
+
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span> تيك زون</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">نحن هنا لمساعدتك</h2>
+        <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+            هل لديك استفسار عن منتج معين؟ أو واجهت مشكلة في الطلب؟
+            فريق خدمة العملاء جاهز للرد عليك في أسرع وقت.
+        </p>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <h3>معلومات التواصل</h3>
+
+                <div class="info-item">
+                    <span>📍 العنوان:</span><br>
+                    المملكة العربية السعودية، الرياض، طريق الملك فهد، برج التقنية.
+                </div>
+
+                <div class="info-item">
+                    <span>📞 الهاتف:</span><br>
+                    920000000
+                </div>
+
+                <div class="info-item">
+                    <span>📧 البريد الإلكتروني:</span><br>
+                    support@techzone.sa
+                </div>
+
+                <div class="info-item">
+                    <span>🕒 ساعات العمل:</span><br>
+                    السبت - الخميس: 9:00 صباحاً - 10:00 مساءً<br>
+                    الجمعة: 4:00 عصراً - 11:00 مساءً
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>أرسل لنا رسالة</h3>
+                <form onsubmit="event.preventDefault(); sendMessage();">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" placeholder="ادخل اسمك هنا" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="example@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" placeholder="اكتب استفسارك أو شكواك هنا..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-buy">إرسال الرسالة ✉️</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>عن تيك زون</h3>
+                <p>وجهتك الأولى لأحدث التقنيات. نضمن لك أجهزة أصلية 100% مع ضمان الوكيل وتجربة تسوق آمنة وسريعة.</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h3>روابط هامة</h3>
+                <a href="privacy.html">سياسة الخصوصية</a>
+                <a href="terms.html">الشروط والأحكام</a>
+                <a href="contact.html">المساعدة والدعم</a>
+            </div>
+            <div class="footer-section">
+                <h3>طرق الدفع الآمنة</h3>
+                <div class="payment-icons">
+                    <span>VISA</span>
+                    <span>MasterCard</span>
+                    <span>Mada</span>
+                    <span>Apple Pay</span>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.8rem;">🔒 جميع العمليات مشفرة وآمنة</p>
+            </div>
+        </div>
+        <div class="copyright">
+            جميع الحقوق محفوظة &copy; 2026 لمتجر تيك زون
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        function sendMessage() {
+            var name = document.getElementById('name').value;
+            alert("شكراً لك يا " + name + "!\nتم استلام رسالتك بنجاح، وسيقوم فريق الدعم بالرد عليك خلال 24 ساعة. 📧");
+            document.getElementById('name').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('message').value = "";
+        }
+    </script>
+</body>
+
+</html>

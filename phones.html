@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تسوق أحدث الجوالات الذكية آيفون وسامسونج في تيك زون بأسعار منافسة">
+    <title>تيك زون | الجوالات الذكية</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="phones.html" style="color: #ff9900;">الجوالات</a></li>
+                    <li><a href="accessories.html">الاكسسوارات</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="cart.html" class="cart-icon">🛒 السلة <span id="cart-badge"
+                                class="cart-badge">0</span></a></li>
+                </ul>
+            </nav>
+
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span> تيك زون</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">أحدث الهواتف الذكية</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="images/image_1.png" alt="iPhone 17 Pro">
+                <h3 class="product-title">iPhone 17 Pro</h3>
+                <p class="product-desc">ذاكرة 1TB - لون تيتانيوم - شريحة A19 Pro</p>
+                <span class="price">5999 ر.س</span>
+                <button class="btn-buy" data-name="iPhone 17 Pro (1TB)" data-price="5999"
+                    data-image="images/image_1.png" onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_4.png" alt="Samsung S25 Ultra">
+                <h3 class="product-title">Samsung S25 Ultra</h3>
+                <p class="product-desc">ذاكرة 512GB - حصري - رمادي تيتانيوم</p>
+                <span class="price">5200 ر.س</span>
+                <button class="btn-buy" data-name="Samsung S25 Ultra (512GB)" data-price="5200"
+                    data-image="images/image_4.png" onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_3.png" alt="iPhone 15 Pro">
+                <h3 class="product-title">iPhone 15 Pro</h3>
+                <p class="product-desc">شاشة 6.7 إنش - بطارية تدوم يومين - 256GB</p>
+                <span class="price">4100 ر.س</span>
+                <button class="btn-buy" data-name="iPhone 15 Pro" data-price="4100" data-image="images/image_3.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_0.png" alt="Samsung S25">
+                <h3 class="product-title">Samsung Galaxy S22</h3>
+                <p class="product-desc">أداء متوازن - حجم مدمج - كاميرا 50MP</p>
+                <span class="price">3200 ر.س</span>
+                <button class="btn-buy" data-name="Samsung Galaxy S22" data-price="3200" data-image="images/image_0.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <span class="sale-badge">تخفيض</span>
+                <img src="images/image_3.png" alt="iPhone 16 Pro">
+                <h3 class="product-title">iPhone 16 Pro</h3>
+                <p class="product-desc">عرض تصفية - ذاكرة 256GB - ضمان سنتين</p>
+                <span class="price"><s style="color:#666; font-size:0.9rem;">4500</s> 3800 ر.س</span>
+                <button class="btn-buy" data-name="iPhone 16 Pro" data-price="3800" data-image="images/image_3.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <span class="sale-badge">تخفيض</span>
+                <img src="images/image_5.png" alt="Samsung S24 Ultra">
+                <h3 class="product-title">Samsung S24 Ultra</h3>
+                <p class="product-desc">قلم S-Pen - ذكاء اصطناعي Galaxy AI</p>
+                <span class="price"><s style="color:#666; font-size:0.9rem;">4200</s> 3500 ر.س</span>
+                <button class="btn-buy" data-name="Samsung S24 Ultra" data-price="3500" data-image="images/image_5.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_3.png" alt="iPhone 15">
+                <h3 class="product-title">iPhone 15</h3>
+                <p class="product-desc">جديد بكرتون المصنع - لون أزرق - 128GB</p>
+                <span class="price">2800 ر.س</span>
+                <button class="btn-buy" data-name="iPhone 15" data-price="2800" data-image="images/image_3.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_5.png" alt="Samsung S23 Ultra">
+                <h3 class="product-title">Samsung S23 Ultra</h3>
+                <p class="product-desc">نسخة المعجبين - أداء قوي بسعر اقتصادي</p>
+                <span class="price">1999 ر.س</span>
+                <button class="btn-buy" data-name="Samsung S23 Ultra" data-price="1999" data-image="images/image_5.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_3.png" alt="iPhone SE">
+                <h3 class="product-title">iPhone 14 Pro</h3>
+                <p class="product-desc">أرخص آيفون - زر بصمة - حجم صغير</p>
+                <span class="price">1800 ر.س</span>
+                <button class="btn-buy" data-name="iPhone 14 Pro" data-price="1800" data-image="images/image_3.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+
+            <div class="footer-section">
+                <h3>عن تيك زون</h3>
+                <p>وجهتك الأولى لأحدث التقنيات. نضمن لك أجهزة أصلية 100% مع ضمان الوكيل وتجربة تسوق آمنة وسريعة.</p>
+            </div>
+
+            <div class="footer-section footer-links">
+                <h3>روابط هامة</h3>
+                <a href="privacy.html">سياسة الخصوصية</a>
+                <a href="terms.html">الشروط والأحكام</a>
+                <a href="contact.html">المساعدة والدعم</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>طرق الدفع الآمنة</h3>
+                <div class="payment-icons">
+                    <span>VISA</span>
+                    <span>MasterCard</span>
+                    <span>Mada</span>
+                    <span>Apple Pay</span>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.8rem;">🔒 جميع العمليات مشفرة وآمنة</p>
+            </div>
+
+        </div>
+        <div class="copyright">
+            جميع الحقوق محفوظة &copy; 2026 لمتجر تيك زون
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>

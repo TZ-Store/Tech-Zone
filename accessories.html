@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="اكسسوارات أصلية للجوالات، ساعات ذكية، سماعات، شواحن، وأغطية حماية في تيك زون">
+    <title>تيك زون | الاكسسوارات الأصلية</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="phones.html">الجوالات</a></li>
+                    <li><a href="accessories.html" style="color: #ff9900;">الاكسسوارات</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="cart.html" class="cart-icon">🛒 السلة <span id="cart-badge"
+                                class="cart-badge">0</span></a></li>
+                </ul>
+            </nav>
+
+            <a href="index.html" class="logo"><span class="logo-icon">⚡</span> تيك زون</a>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">الاكسسوارات وملحقات الصوت</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="images/image_2.png" alt="Apple Watch Ultra">
+                <h3 class="product-title">Apple Watch Ultra 2</h3>
+                <p class="product-desc">هيكل تيتانيوم - سوار برتقالي - بطارية 3 أيام</p>
+                <span class="price">3299 ر.س</span>
+                <button class="btn-buy" data-name="Apple Watch Ultra 2" data-price="3299"
+                    data-image="images/image_2.png" onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_6.png" alt="Samsung Watch 6">
+                <h3 class="product-title">Samsung Galaxy Watch 7</h3>
+                <p class="product-desc">تتبع الصحة والنوم - مقاومة للماء - شاشة كريستال</p>
+                <span class="price">1200 ر.س</span>
+                <button class="btn-buy" data-name="Samsung Galaxy Watch 7" data-price="1200"
+                    data-image="images/image_6.png" onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_2.png" alt="Apple Watch SE">
+                <h3 class="product-title">Apple Watch SE</h3>
+                <p class="product-desc">الخيار الاقتصادي - تتبع النشاط - إشعارات ذكية</p>
+                <span class="price">999 ر.س</span>
+                <button class="btn-buy" data-name="Apple Watch SE" data-price="999" data-image="images/image_2.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_7.png" alt="Apple AirPods Pro">
+                <h3 class="product-title">AirPods Pro (الجيل 3)</h3>
+                <p class="product-desc">عزل ضوضاء - صوت محيطي - شحن MagSafe</p>
+                <span class="price">999 ر.س</span>
+                <button class="btn-buy" data-name="AirPods Pro (الجيل 3)" data-price="999"
+                    data-image="images/image_7.png" onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_7.png" alt="Galaxy Buds">
+                <h3 class="product-title">Galaxy Buds 3 Pro</h3>
+                <p class="product-desc">تصميم مريح - عزل ذكي - صوت نقي 24bit</p>
+                <span class="price">750 ر.س</span>
+                <button class="btn-buy" data-name="Galaxy Buds 3 Pro" data-price="750" data-image="images/image_7.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_8.png" alt="Headphones">
+                <h3 class="product-title">سماعة رأس محيطية</h3>
+                <p class="product-desc">عزل تام - مريحة للأذن - بطارية 40 ساعة</p>
+                <span class="price">550 ر.س</span>
+                <button class="btn-buy" data-name="سماعة رأس محيطية" data-price="550" data-image="images/image_8.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_11.png" alt="iPhone Leather Case">
+                <h3 class="product-title">كفر حماية جلدي فاخر</h3>
+                <p class="product-desc">جلد طبيعي - يدعم الشحن اللاسلكي - حماية للكاميرا</p>
+                <span class="price">249 ر.س</span>
+                <button class="btn-buy" data-name="كفر حماية جلدي فاخر" data-price="249"
+                    data-image="images/image_11.png" onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_9.png" alt="Anker Charger">
+                <h3 class="product-title">شاحن جداري Anker 45W</h3>
+                <p class="product-desc">شحن سريع جداً - حجم صغير - تقنية GaN</p>
+                <span class="price">129 ر.س</span>
+                <button class="btn-buy" data-name="شاحن جداري Anker 45W" data-price="129"
+                    data-image="images/image_9.png" onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/image_10.png" alt="Charging Cable">
+                <h3 class="product-title">كيبل شحن قماشي قوي</h3>
+                <p class="product-desc">مقاوم للقطع - طول 2 متر - يدعم نقل البيانات</p>
+                <span class="price">79 ر.س</span>
+                <button class="btn-buy" data-name="كيبل شحن قماشي قوي" data-price="79" data-image="images/image_10.png"
+                    onclick="addToCart(this)">إضافة للسلة 🛒</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+
+            <div class="footer-section">
+                <h3>عن تيك زون</h3>
+                <p>وجهتك الأولى لأحدث التقنيات. نضمن لك أجهزة أصلية 100% مع ضمان الوكيل وتجربة تسوق آمنة وسريعة.</p>
+            </div>
+
+            <div class="footer-section footer-links">
+                <h3>روابط هامة</h3>
+                <a href="privacy.html">سياسة الخصوصية</a>
+                <a href="terms.html">الشروط والأحكام</a>
+                <a href="contact.html">المساعدة والدعم</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>طرق الدفع الآمنة</h3>
+                <div class="payment-icons">
+                    <span>VISA</span>
+                    <span>MasterCard</span>
+                    <span>Mada</span>
+                    <span>Apple Pay</span>
+                </div>
+                <p style="margin-top: 10px; font-size: 0.8rem;">🔒 جميع العمليات مشفرة وآمنة</p>
+            </div>
+
+        </div>
+        <div class="copyright">
+            جميع الحقوق محفوظة &copy; 2026 لمتجر تيك زون
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+
+</html>
